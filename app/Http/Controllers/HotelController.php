@@ -20,7 +20,7 @@ class HotelController extends Controller
         if(request()->ajax())
         {
             return $Hotels = Datatables::of(Hotel::all())
-            ->addColumn('action','layouts.dt_buttons')
+            ->addColumn('action','layouts.dt_buttons_2')
             // ->rawColumn(['action'])
             ->make(true);
         }
@@ -109,17 +109,17 @@ class HotelController extends Controller
     }
 
 
-    //destroyAll 
+    //destroyAll
     public function destroyAll()
     {
         Hotel::withTrashed()->delete();
         return back()->with('destroyAll','Deleted All data is stored in the trash');
     }
-    
+
     /**
      * View Trash Page
      * @return \Illumindate\Http\Response
-     * 
+     *
      */
     public function trash()
     {

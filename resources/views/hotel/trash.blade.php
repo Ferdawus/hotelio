@@ -17,7 +17,7 @@
                     <h5><i class="icon fas fa-check"></i>Restore Successfull!</h5>
                     {{Session::get('Restore')}}
                 </div>
-                    
+
                 @endif
 
                 @if(Session::get('RestoreAll'))
@@ -40,7 +40,7 @@
                     <div class="card-header bg-defult">
                         <div class="card-title">
                             <h2 class="card-title">
-                              <a href="{{ asset('hotel') }}" class="mr-3"><i class="fa-solid fa-circle-arrow-left fs-5 text-navy" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Back to List"></i></a> 
+                              <a href="{{ asset('hotel') }}" class="mr-3"><i class="fa-solid fa-circle-arrow-left fs-5 text-navy" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Back to List"></i></a>
                                 Hotel Trash List
                             </h2>
                         </div>
@@ -82,11 +82,11 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                           
+
                         </table>
                     </div>
                     <div class="card-footer">
-                     
+
                     </div>
                 </div>
             </div>
