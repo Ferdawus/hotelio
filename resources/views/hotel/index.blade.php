@@ -2,45 +2,6 @@
 @section('content')
     <div class="container py-5 col-md-12 m-auto">
         <div class="row">
-            {{-- <div class="col-md-12 m-auto">
-                <div class="card">
-                    <div class="card-header bg-defult">
-                        <div class="card-title">
-                            <h2 class="card-title">
-                                <button type="button" class="btn bg-navy text-capitalize mr-3" id="AddNewBtn"><i class="fa-solid fa-circle-plus mr-2"></i>Add New</button>
-                                Hotel List
-                            </h2>
-                        </div>
-                        <a class="btn btn-sm bg-navy float-right text-capitalize" href="/hotel/trash"><i class="fa-solid fa-recycle mr-2"></i>View Trash</a>
-
-                        <a class="btn btn-sm bg-maroon float-right text-capitalize mr-3" href="/hotel/delete"><i class="fa-solid fa-trash-can mr-2"></i>Delete All</a>
-                    </div>
-                    <div class="card-body table-responsive p-0">
-
-                        <table class="table table-hover table-responsive" id="HotelList">
-
-                            <thead>
-                                <tr class="border-bottom">
-                                    <th>Name</th>
-                                    <th>Title</th>
-                                    <th>Email</th>
-                                    <th>Address</th>
-                                    <th>Phone</th>
-                                    <th>Reg NO</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-
-                        </table>
-                    </div>
-                    <div class="card-footer">
-
-                    </div>
-                </div>
-            </div> --}}
 
             <div class="col-md-11 m-auto">
                 <div class="card">
@@ -56,7 +17,7 @@
                         <a class="btn btn-sm bg-maroon float-right text-capitalize mr-3" href="/hotel/delete"><i class="fa-solid fa-trash-can mr-2"></i>Delete All</a>
                     </div>
                     <div class="card-body table-responsive p-0">
-                        <table class="table table-hover text-nowrap ListTable" id="HotelList">
+                        <table class="table  table-hover  ListTable" id="HotelList">
                             <thead>
                                 <tr class="border-bottom">
                                     <th>Name</th>
@@ -78,7 +39,7 @@
         </div>
 
         <div class="modal fade show" id="NewHotelModal"  role="dialog">
-            <div class="modal-dialog modal-xl ">
+            <div class="modal-dialog modal-md ">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">New Hotel</h4>
@@ -150,7 +111,7 @@
             </div>
         </div>
         <div class="modal fade show" id="EditHotelModal"  role="dialog">
-            <div class="modal-dialog modal-xl ">
+            <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Update Hotel</h4>
@@ -211,7 +172,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button type="button" name="submit" id="UpdateBtn" class="btn bg-success float-right w-25 text-capitalize" >Update </button>
+                                <button type="button" name="submit" id="UpdateBtn" class="btn bg-navy float-right w-25 text-capitalize" >Update </button>
                             </div>
                         </div>
                     {{ Form::close()}}

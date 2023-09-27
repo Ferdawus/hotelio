@@ -17,7 +17,7 @@
                     <h5><i class="icon fas fa-check"></i>Restore Successfull!</h5>
                     {{Session::get('Restore')}}
                 </div>
-                    
+
                 @endif
 
                 @if(Session::get('RestoreAll'))
@@ -40,7 +40,7 @@
                     <div class="card-header bg-defult">
                         <div class="card-title">
                             <h2 class="card-title">
-                              <a href="{{ asset('hotel') }}" class="mr-3"><i class="fa-solid fa-circle-arrow-left fs-5 text-navy" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Back to List"></i></a> 
+                              <a href="{{ asset('hotel') }}" class="mr-3"><i class="fa-solid fa-circle-arrow-left fs-5 text-navy" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Back to List"></i></a>
                                 Hotel Trash List
                             </h2>
                         </div>
@@ -48,7 +48,7 @@
                         <a class="btn btn-sm bg-success float-right text-capitalize mr-3" href="/hotel/restoreAll"><i class="fa-solid fa-undo mr-2"></i>Restore All</a>
                     </div>
                     <div class="card-body table-responsive p-0">
-                        <table class="table table-hover table-responsive table-borderless">
+                        <table class="table table-hover table-responsive table-borderless" id="HotelListTrash">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -82,11 +82,11 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                           
+
                         </table>
                     </div>
                     <div class="card-footer">
-                     
+
                     </div>
                 </div>
             </div>
@@ -96,7 +96,8 @@
         $(document).ready(function(){
             $('.DeleteBtn').on('click',function(e) {
                 e.preventDefault();
-                var ID = $(this).val();
+                var button = $(this);
+                var ID = button.val();
                 Swal.fire({
                   title: 'Are you sure?',
                   text: "You won't be able to Parmanent Delete this!",
@@ -111,6 +112,7 @@
                             type    : 'GET',
                             url     : "/hotel/parmanently/delete/"+ID,
                             success:function(data){
+                                HotelListTrash.draw(true);
                                 Swal.fire(
                                     'Deleted!',
                                     'Your file has been Parmanently deleted.',
@@ -124,7 +126,6 @@
                                     'error'
                                 );
 
-                                console.log(data);
                             }
                         });
                     }
